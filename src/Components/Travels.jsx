@@ -1,33 +1,89 @@
 import { brown, gold, grey } from '@/styles/colors'
 import React from 'react'
 import styled from 'styled-components'
+import Available from './Available'
+import Banner from './Banner'
+import Footer from './Footer'
+import Nav from './Nav'
 
-const BriefAbout = () => {
+const Travels = () => {
   return (
+    <>
+        <Nav/>
+        <Banner />
+        <MainContainer>
+
+        <div className="available_container">
+          <h2>Available Tickets</h2>
+        <div className="availables">
+            {
+              [1,2,3,4,5].map((a, n)=>{
+                return(
+                  <>
+                    <Available key={n}/>
+                  </>
+                )
+              })
+            }
+            
+        </div>
+        </div>
+        
+    </MainContainer>
+
     <Container>
         {/* <h1>About Us</h1> */}
 
         <div className="content">
         <div className="text">
-                <p className="about">About us</p>
+                <p className="about">Why you should choose us</p>
                 <p className='big'>
-                    Gold Friends is a dynamic and innovative company that is dedicated to simplifying the lives of its clients. 
+                Say goodbye to long lines, complicated paperwork, and endless phone calls. Book your travel tickets and process your visa with us for a hassle-free experience that allows you to focus on what truly matters - making memories on your trip.
                 </p>
                 {/* <p>
                 With its wide range of services, including Real Estate Management, Ticket booking, and Visa processing, the company is a one-stop-shop for all your needs.
                     Its team of highly skilled and compassionate professionals is committed to delivering unparalleled services with a personal touch, ensuring that each and every client feels valued and well taken care of.
                 </p> */}
 
-                <div className="readMore">
-                    Read More
-                </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1551590192-8070a16d9f67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="" />
+            <img src="https://thumbs.dreamstime.com/b/word-writing-text-why-choose-us-question-business-concept-reasons-choosing-our-brand-over-others-arguments-black-coffee-w-121980515.jpg" alt="" />
 
         </div>
     </Container>
+        <Footer />
+    </>
   )
 }
+
+export const MainContainer = styled.div`
+    width: 80%;
+    margin: 100px auto;
+    .why{
+        
+        h2{
+            text-align: center;
+            padding: 20px 0;
+        }
+        p{
+            line-height: 1.5;
+        }
+    }
+    .availables{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      padding: 30px 0;
+      @media (max-width: 700px){
+        grid-template-columns: none;
+      }
+    }
+    .available_container{
+      margin: 100px 0;
+      h2{
+        text-align: center;
+      }
+    }
+`
 
 const Container = styled.div`
     background-color: ${grey};
@@ -74,7 +130,7 @@ const Container = styled.div`
             color: ${brown};
         }
         p.big{
-            font-size: 45px;
+            font-size: 35px;
             padding: 0;
             line-height: 1;
             font-weight: 600;
@@ -110,4 +166,4 @@ const Container = styled.div`
     }
 `
 
-export default BriefAbout
+export default Travels

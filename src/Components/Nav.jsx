@@ -1,4 +1,5 @@
 import { deepGreen, lightGreen } from '@/styles/colors'
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -34,10 +35,13 @@ const Nav = () => {
                 })
             }
         </div>
-
-        <div className="signup">
-            Sign up
-        </div>
+        
+        <Link href={"/sign-up"}>
+            <div className="signup">
+                Sign up
+            </div>
+        </Link>
+        
     </Container>
   )
 }

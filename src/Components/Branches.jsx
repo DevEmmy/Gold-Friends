@@ -12,7 +12,7 @@ const Branches = () => {
         {
             name: "GoldFriends - Sadata Homes and Gardens",
             content: "We are here to help you realize your housing dreams.",
-            image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=996&q=80"
+            image: "https://jiji-blog.com/wp-content/uploads/2019/03/Lekki.jpg"
         },
         {
             name: "Mining",
