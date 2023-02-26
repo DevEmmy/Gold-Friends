@@ -1,5 +1,5 @@
 export const details = {
-    name: "Goldfriends travels and tour",
+    name: "Goldfriends & Companies",
     address: [
         "Km 37, Lagos Abeokuta Express way Ajegunle bus stop, Suite 16/17A Glitters Plaza beside NNPC filling station.", 
         

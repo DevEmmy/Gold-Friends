@@ -1,18 +1,26 @@
 import { brown, gold } from '@/styles/colors'
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 
-const Banner = () => {
+const Banner = ({bigText, smallText, cta}) => {
   return (
     <Container>
-        <h1>GoldFriends & Companies</h1>
+        <h1>{bigText || "GoldFriends & Companies"}</h1>
         <p>
-        Gold Friends is a company that offers a range of services including Real Estate Management, Ticket Booking and Visa Processing.
+        {smallText || "Gold Friends is a company that offers a range of services including Real Estate Management, Ticket Booking and Visa Processing."}
         </p>
 
-        <div className="getStarted">
-            Get Started
-        </div>
+        {
+            cta ||
+            <Link href="#branches">
+            <div className="getStarted">
+                Get Started
+            </div>
+            </Link>
+            
+        }
+        
     </Container>
   )
 }

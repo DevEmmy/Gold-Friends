@@ -8,7 +8,7 @@ const Sadata = () => {
   return (
     <>
         <Nav/>
-        <Banner/>
+        <Banner bigText={"Sadata Homes & Gardens"} smallText={"Take the Next Step: Find Your Dream Home in Real Estate"} cta={<></>}/>
         <Properties />
         <Footer/>
     </>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Contact = () => {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
         <form>
             <h2>
                 Get in touch today &#x1F44B;

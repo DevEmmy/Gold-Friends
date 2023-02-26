@@ -56,6 +56,11 @@ export const Auth = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
+
+  a{
+    text-decoration: underline;
+    color: #b18641;
+  }
   p{
     text-align: center;
   }

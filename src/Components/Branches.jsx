@@ -21,7 +21,7 @@ const Branches = () => {
         }
     ]
   return (
-    <Container>
+    <Container id="branches">
         <div className="header">
             <p>Our Branches</p>
             <h3>Our Branches are offering top-notch products and services.</h3>

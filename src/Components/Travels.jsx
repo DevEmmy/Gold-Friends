@@ -131,9 +131,10 @@ const Container = styled.div`
         }
         p.big{
             font-size: 35px;
-            padding: 0;
             line-height: 1;
             font-weight: 600;
+            padding-left:20px ;
+            border-left: 3px solid;
             /* text-shadow: 0 3px 10px rgba(0,0,0,0.2); */
         }
 
