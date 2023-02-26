@@ -7,6 +7,7 @@ import Footer from './Footer'
 import Nav from './Nav'
 import useSound from 'use-sound';
 import Contact from './Contact'
+import Client from './Client'
 
 const MainPage = () => {
     const [play] = useSound("https://res.cloudinary.com/devemmy/video/upload/v1677340013/yt1s.com_-_Ayra_Starr_Rush_Official_Music_Video_lprrvz.mp3");
@@ -28,6 +29,7 @@ const MainPage = () => {
         <Banner />
         <Branches />
         <BriefAbout />
+        <Client />
         <BottomBanner />
         <Contact />
 

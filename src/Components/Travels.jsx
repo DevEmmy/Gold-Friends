@@ -10,7 +10,7 @@ const Travels = () => {
   return (
     <>
         <Nav/>
-        <Banner />
+        <Banner smallText={"Streamline your travel plans with ease by letting us handle your visa processing and ticket booking all in one convenient process!"} bigText="Gold Friends - Travels & Tours" cta={<> </>}/>
         <MainContainer>
 
         <div className="available_container">
