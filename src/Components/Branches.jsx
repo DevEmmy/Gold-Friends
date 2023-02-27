@@ -1,4 +1,5 @@
 import { brown, grey } from '@/styles/colors'
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -7,17 +8,20 @@ const Branches = () => {
         {
             name: "GoldFriends - Travel and Tour",
             content: "Travel without stress - let us handle your visa needs",
-            image: "https://assets.thehansindia.com/h-upload/2019/12/27/248830-worldtour.webp"
+            image: "https://assets.thehansindia.com/h-upload/2019/12/27/248830-worldtour.webp",
+            link: "/travels"
         },
         {
             name: "GoldFriends - Sadata Homes and Gardens",
             content: "We are here to help you realize your housing dreams.",
-            image: "https://jiji-blog.com/wp-content/uploads/2019/03/Lekki.jpg"
+            image: "https://jiji-blog.com/wp-content/uploads/2019/03/Lekki.jpg",
+            link: "/sadata"
         },
         {
             name: "Mining",
             content: "Coming Soon",
-            image: "https://images.unsplash.com/photo-1505833464198-4993b36cdfab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            image: "https://images.unsplash.com/photo-1505833464198-4993b36cdfab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            link: "/"
         }
     ]
   return (
@@ -31,13 +35,16 @@ const Branches = () => {
             {
                 branches.map((branch, i)=>{
                     return(
-                        <div key={i} className="branch">
-                            <img src={branch.image} alt="" />
-                            <div className="textContents">
-                                <h3>{branch.name}</h3>
-                                <p>{branch.content}</p>
+                        <Link href={branch.link}>
+                            <div key={i} className="branch">
+                                <img src={branch.image} alt="" />
+                                <div className="textContents">
+                                    <h3>{branch.name}</h3>
+                                    <p>{branch.content}</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
+                        
                     )
                 })
             }

@@ -15,7 +15,7 @@ export default function Home() {
   // }, [])
   
   return (
-    <Fragment onScroll={()=> console.log("hey")}>
+    <Fragment>
       <MetaTags />
       <MainPage />
       

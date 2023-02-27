@@ -8,10 +8,30 @@ import {data} from "./data"
 import Banner from './Banner';
 import Footer from './Footer';
 import styled from 'styled-components';
+import { createRequest } from './services/Services';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Property = ({property}) => {
     
     // console.log(property)
+    const [loggedUser, setLoggedUser] = useState({});
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [phoneNumber, setPhoneNumber] = useState();
+    const [message, setMessage] = useState();
+
+    useEffect(()=>{
+        let user = JSON.parse(localStorage.getItem("user"))
+        setLoggedUser(user)
+        setName(user.firstName + " " + user.lastName)
+        setEmail(user.email)
+        setPhoneNumber(user.phoneNumber)
+    }, [])
+
+    const handleForm = ()=>{
+        createRequest(name, email, phoneNumber, message)
+    }
 
   return (
     <>
@@ -63,17 +83,18 @@ const Property = ({property}) => {
         <div className="request">
           <h2>Make a Request for Property</h2>
           <form action="">
-            <input type="text" placeholder="John Doe" />
-            <input type="email" placeholder="johndoe@gmail.com" />
-            <input type="tel" placeholder="090239239" />
+            <input type="text" placeholder="John Doe" value={name} onChange={(e)=> setName(e.target.value)}/>
+            <input type="email" placeholder="johndoe@gmail.com" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+            <input type="tel" placeholder="090239239" value={phoneNumber} onChange={(e)=> setPhoneNumber(e.target.value)}/>
             <textarea
               placeholder="Message"
+              onChange={(e)=> setName(e.target.value)}
               value={`
                   Hi, I am interested in ${property?.title}
                 `}
             />
 
-            <div className="submit">Submit</div>
+            <div className="submit" onClick={handleForm}>Submit</div>
           </form>
         </div>
       </Details>
@@ -134,7 +155,7 @@ export const Details = styled.div`
         height: 100px;
         resize: none;
         padding: 10px;
-        
+
       }
     }
   }

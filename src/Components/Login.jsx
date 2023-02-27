@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 // import { Auth } from './Styled'
 import Link from "next/link"
 import styled from 'styled-components';
-// import { signIn } from './services/Services'
+import { signIn } from './services/Services'
 
 const SignIn = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
 
   const handleForm = ()=>{
-    // signIn(email, password);
+    signIn(email, password);
     console.log(email)
   }
   return (

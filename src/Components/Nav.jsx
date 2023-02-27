@@ -1,6 +1,6 @@
 import { deepGreen, lightGreen } from '@/styles/colors'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {HiMenuAlt3} from "react-icons/hi"
 import {HiXMark} from "react-icons/hi2"
@@ -26,13 +26,21 @@ const Nav = () => {
     ]
 
     const [showNav, setShowNav] = useState(false)
+    const [loggedUser, setLoggedUser] = useState();
+
+    useEffect(()=>{
+        setLoggedUser(JSON.parse(localStorage.getItem("user")))
+    }, [])
 
   return (
     <>
         <Container>
-            <div className="logo">
-                <h1>Logo</h1>
-            </div>
+            <Link href={"/"}>
+                <div className="logo">
+                    <h1>Logo</h1>
+                </div>
+            </Link>
+            
 
             <div className="navItems">
                 {
@@ -47,13 +55,21 @@ const Nav = () => {
                         )
                     })
                 }
+
+                
+                
             </div>
             
-            <Link href={"/sign-up"}>
+            {
+                loggedUser ? 
+                <p>Welcome, {loggedUser.firstName}</p>:
+                <Link href={"/sign-up"}>
                 <div className="signup">
                     Sign up
                 </div>
             </Link>
+            }
+            
             
         </Container>
 
@@ -81,6 +97,12 @@ const Nav = () => {
                         )
                     })
                 }
+
+                <Link href={"/login"} onClick={()=> localStorage.clear()}>
+                <p className="mobile_nav">
+                    Logout
+                </p>
+                </Link>
             </div>
         </MobileContainer>
     </>

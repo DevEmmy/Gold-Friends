@@ -3,15 +3,17 @@ import React, { useState } from 'react'
 import Link from "next/link"
 import { details } from 'utilities/details'
 import { Auth } from './Login';
-// import { signUp } from './services/Services'
+import { signUp } from './services/Services'
 
 const SignUp = () => {
-  const [name, setName]= useState("");
+  const [firstName, setFirstName]= useState("");
+  const [lastName, setLastName]= useState("");
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("")
 
   const handleForm = ()=>{
-    
+    signUp(firstName, lastName, email, password, phoneNumber)
   }
 
   return (
@@ -22,9 +24,16 @@ const SignUp = () => {
             <form action="">
                 <input 
                 type="text" 
-                value={name} 
-                placeholder='your name'
-                onChange={(e)=> setName(e.target.value)}
+                value={firstName} 
+                placeholder='your first name'
+                onChange={(e)=> setFirstName(e.target.value)}
+                />
+
+                <input 
+                type="text" 
+                value={lastName} 
+                placeholder='your last name'
+                onChange={(e)=> setLastName(e.target.value)}
                 />
 
                 <input 
@@ -32,6 +41,13 @@ const SignUp = () => {
                 placeholder='youremail@email.com'
                 value={email}
                 onChange={(e)=> setEmail(e.target.value)}
+                />
+
+                <input 
+                type="tel" 
+                placeholder='your phone number'
+                value={phoneNumber}
+                onChange={(e)=> setPhoneNumber(e.target.value)}
                 />
 
                 <input 
