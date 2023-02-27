@@ -2,7 +2,7 @@ import axios from "axios"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const api = "http://localhost:9099"
+const api = "https://tender-pleat-crab.cyclic.app"
 // const loggedUser = JSON.parse(localStorage.getItem("user"))
 
 const setConfig = ()=>{
