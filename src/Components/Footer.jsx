@@ -23,15 +23,29 @@ const Footer = () => {
                 {
                     details.address.map((a, i)=>{
                         return(
+                          <div key={i}>
                             <p className="address">
                                 <HiLocationMarker />
-                                {a}
+                                {a.title}
                             </p>
+                            <div className='contact'>
+                              <HiPhone />{
+                                a.contacts.map((contact, i) => {
+                                  return(
+                                    <p>
+                                      {contact}
+                                    </p>
+                                  )
+                                })
+                              }
+                            </div>
+                          </div>
+                            
                         )
                     })
                 }
             </div>
-            <div>Contact <HiPhone /> : 0907823236, 0902236237</div>
+            {/* <div>Contact <HiPhone /> : 0907823236, 0902236237</div> */}
             <div className="socials">
                 <div>
                     <FaInstagram />
@@ -73,6 +87,13 @@ margin-top: 100px;
   .slogan {
     width: 80%;
   }
+}
+
+div.contact{
+  display: flex;
+  gap: 10px;
+  padding: 3px 0;
+  align-items: center;
 }
 .right {
   display: flex;

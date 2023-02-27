@@ -24,9 +24,9 @@ const Property = ({property}) => {
     useEffect(()=>{
         let user = JSON.parse(localStorage.getItem("user"))
         setLoggedUser(user)
-        setName(user.firstName + " " + user.lastName)
-        setEmail(user.email)
-        setPhoneNumber(user.phoneNumber)
+        setName(user?.firstName + " " + user?.lastName)
+        setEmail(user?.email)
+        setPhoneNumber(user?.phoneNumber)
     }, [])
 
     const handleForm = ()=>{
@@ -36,7 +36,7 @@ const Property = ({property}) => {
   return (
     <>
       <Nav/>
-      <Banner />
+      <Banner bigText={property?.title} smallText={property?.details} cta={<></>}/>
 
       <Details>
         <div className="description">

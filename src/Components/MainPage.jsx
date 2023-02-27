@@ -10,21 +10,10 @@ import Contact from './Contact'
 import Client from './Client'
 
 const MainPage = () => {
-    const [play] = useSound("https://res.cloudinary.com/devemmy/video/upload/v1677340013/yt1s.com_-_Ayra_Starr_Rush_Official_Music_Video_lprrvz.mp3");
-
-    const [playing, setPlaying] = useState(false)
-
-    const startPlaying = ()=>{
-        if(!playing){
-            play()
-            console.log("play")
-            setPlaying(true)
-        }
-        // play()
-    }
+    
 
   return (
-    <div onClick={startPlaying} onTouchStart={startPlaying} onLoadStart={startPlaying}>
+    <div>
         <Nav />
         <Banner />
         <Branches />
