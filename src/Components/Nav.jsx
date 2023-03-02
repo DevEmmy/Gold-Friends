@@ -14,10 +14,6 @@ const Nav = () => {
             link: "/about"
         },
         {
-            title: "Contact Us",
-            link: "#contact"
-        },
-        {
             title: "Travel & Tours",
             link: "/travels"
         },
@@ -58,7 +54,25 @@ const Nav = () => {
                     })
                 }
 
-                
+<Link1
+                activeClass="active"
+                to="footer"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                >
+                <p className="mobile_nav">
+                Contact Us
+                </p>
+                    
+                </Link1>
+
+                <Link href={"/login"} onClick={()=> localStorage.clear()}>
+                <p className="mobile_nav">
+                    Logout
+                </p>
+                </Link>
                 
             </div>
             
@@ -99,6 +113,20 @@ const Nav = () => {
                         )
                     })
                 }
+
+                <Link1
+                activeClass="active"
+                to="footer"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                >
+                <p className="mobile_nav">
+                Contact Us
+                </p>
+                    
+                </Link1>
 
                 <Link href={"/login"} onClick={()=> localStorage.clear()}>
                 <p className="mobile_nav">

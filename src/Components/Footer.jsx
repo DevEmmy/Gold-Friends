@@ -6,7 +6,7 @@ import { details } from 'utilities/details'
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id="footer">
         <div className="left">
             <div className="logo">
                 GoldFriends
