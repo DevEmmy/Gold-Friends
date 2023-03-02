@@ -6,8 +6,12 @@ import img4 from "media/clients/_4.jpeg"
 import img5 from "media/clients/_5.jpeg"
 import styled from 'styled-components'
 import { brown, deepGreen, gold, grey } from '@/styles/colors'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const Client = () => {
+
+  const images = [img1, img2, img3, img4, img5]
   return (
     <Container>
       <h2>Our Happy Client</h2>
@@ -27,6 +31,17 @@ const Client = () => {
             <source src={"https://res.cloudinary.com/devemmy/video/upload/v1676825621/video_hwv1ap.mp4"} type="video/mp4"/>
         </video>
       </div>
+
+      <Carousel>
+            {
+              images.map((img, i)=>{
+              return(
+                <img src={img.src} key={i} alt="" />
+              )
+              })
+            }
+      </Carousel>
+
     </Container>
   )
 }
