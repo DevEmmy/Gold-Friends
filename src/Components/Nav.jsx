@@ -175,7 +175,7 @@ const Container = styled.div`
         }
 
         .logo{
-            width: 50%;
+            width: 70%;
         }
     }
     

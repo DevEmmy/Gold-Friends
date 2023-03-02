@@ -34,8 +34,7 @@ const About = () => {
               easy for you to plan and execute your dream vacation. Our team of
               travel experts will handle all of the details, from finding the
               best flights and accommodations to securing all necessary
-              documents. In addition to helping you travel the world, we also
-              offer a wide range of real estate services.
+              documents.
               </p>
             </div>
             
@@ -53,9 +52,7 @@ const About = () => {
             <p> Whether you are
               looking to buy, sell, or rent a property, our team of experienced
               professionals will guide you through the process and help you find
-              the perfect home. Thank you for considering {details.name} for
-              all of your travel and housing needs. We look forward to helping
-              you create the life you've always wanted.
+              the perfect home.
             </p>
           </div>
 

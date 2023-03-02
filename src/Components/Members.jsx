@@ -65,7 +65,7 @@ const Members = () => {
     ]
   return (
     <MembersStyle>
-        <h2>Our Members</h2>
+        <h2>Our Team</h2>
         <p>Experience the best with our dedicated and highly-skilled team of professionals who are committed to exceeding your expectations.</p>
 
         <div className="members">
