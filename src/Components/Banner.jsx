@@ -2,6 +2,7 @@ import { brown, gold } from '@/styles/colors'
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
+import { Link as Link1, animateScroll as scroll } from "react-scroll";
 
 const Banner = ({bigText, smallText, cta}) => {
   return (
@@ -13,11 +14,18 @@ const Banner = ({bigText, smallText, cta}) => {
 
         {
             cta ||
-            <Link href="#branches">
-            <div className="getStarted">
+            <Link1 
+            activeClass="active"
+            to="branches"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            >
+            <div className="getStarted scrollDown">
                 Get Started
             </div>
-            </Link>
+            </Link1>
             
         }
         
@@ -37,6 +45,7 @@ const Container = styled.div`
     color: rgb(230,230,230);
     line-height: 1.5;
     text-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    scroll-behavior: smooth;
 
     h1{
         font-size: 4rem;
@@ -48,6 +57,13 @@ const Container = styled.div`
         font-size: 20px;
     }
 
+    .scrollDown{
+        -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   transition: all .3s ease-in-out;
+    }
+
     .getStarted{
         background-color: ${gold};
         color: white;
@@ -56,6 +72,7 @@ const Container = styled.div`
         border-radius: 26px;
         box-shadow: 0 8px 20px rgb(0,0,0,0.3);
         margin: 30px 0;
+        scroll-behavior: smooth;
         cursor: pointer;
     }
 

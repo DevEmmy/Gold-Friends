@@ -7,6 +7,28 @@ import Footer from './Footer'
 import Nav from './Nav'
 
 const Travels = () => {
+    const availables = [
+        {
+            image: "https://cdn.britannica.com/25/180825-050-B4693350/Wellington-Harbour-New-Zealand.jpg",
+            title: "New Zealand",
+            description: "Embark on an unforgettable adventure in the land of luxury and wonder - New Zealand!",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1546412414-e1885259563a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            title: "Dubai",
+            description: "Embark on an unforgettable adventure in the land of luxury and wonder - Dubai!"
+        },
+        {
+            image: "https://cdn.britannica.com/47/194547-050-52813FB0/aerial-view-Cairo-Egypt.jpg",
+            title: "Egypt",
+            description: "Embark on an unforgettable adventure in the land of luxury and wonder - Egypt!"
+        },
+        {
+            image: "https://s30876.pcdn.co/wp-content/uploads/South-Africa.jpg.optimal.jpg",
+            title: "South Africa",
+            description: "Embark on an unforgettable adventure in the land of luxury and wonder - South Africa!"
+        }
+    ]
   return (
     <>
         <Nav/>
@@ -17,10 +39,10 @@ const Travels = () => {
           <h2>Available Tickets</h2>
         <div className="availables">
             {
-              [1,2,3,4,5].map((a, n)=>{
+              availables.map((a, n)=>{
                 return(
                   <>
-                    <Available key={n}/>
+                    <Available key={n} data={a}/>
                   </>
                 )
               })

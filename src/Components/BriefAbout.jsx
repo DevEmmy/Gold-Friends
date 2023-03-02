@@ -1,4 +1,5 @@
 import { brown, gold, grey } from '@/styles/colors'
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -17,10 +18,13 @@ const BriefAbout = () => {
                 With its wide range of services, including Real Estate Management, Ticket booking, and Visa processing, the company is a one-stop-shop for all your needs.
                     Its team of highly skilled and compassionate professionals is committed to delivering unparalleled services with a personal touch, ensuring that each and every client feels valued and well taken care of.
                 </p> */}
-
+                
+                <Link href="/about">
                 <div className="readMore">
                     Read More
                 </div>
+                </Link>
+                
             </div>
             <img src="https://images.unsplash.com/photo-1551590192-8070a16d9f67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="" />
 

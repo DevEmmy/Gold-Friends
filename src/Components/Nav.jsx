@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {HiMenuAlt3} from "react-icons/hi"
 import {HiXMark} from "react-icons/hi2"
+import logo from "media/media/logo.png"
+import { Link as Link1, animateScroll as scroll } from "react-scroll";
 
 const Nav = () => {
     const navItems = [
@@ -37,7 +39,7 @@ const Nav = () => {
         <Container>
             <Link href={"/"}>
                 <div className="logo">
-                    <h1>Logo</h1>
+                    <img src={logo.src} alt="" />
                 </div>
             </Link>
             
@@ -122,6 +124,8 @@ const MobileContainer = styled.div`
         justify-content: end;
         color: ${lightGreen};
         padding:0 10px;
+
+        
     }
     .contents{
         padding: 10px 0;
@@ -142,7 +146,7 @@ const MobileContainer = styled.div`
 `
 
 const Container = styled.div`
-    padding: 20px 50px;
+    padding: 0px 50px;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     background-color: white;
@@ -151,11 +155,28 @@ const Container = styled.div`
     align-items: center;
     gap: 100px;
     justify-content: space-between;
+    scroll-behavior: smooth;
+
+    
+    .logo{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
 
     @media (max-width: 700px){
         padding: 10px;
         display: flex;
-        
+        gap: 0;
+
+        a{
+        width: 50%;
+        }
+
+        .logo{
+            width: 50%;
+        }
     }
     
     

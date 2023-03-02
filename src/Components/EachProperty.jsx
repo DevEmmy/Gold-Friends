@@ -36,7 +36,7 @@ const Property = ({property}) => {
   return (
     <>
       <Nav/>
-      <Banner bigText={property?.title} smallText={property?.details} cta={<></>}/>
+      <Banner bigText={property?.title} smallText={"Take the Next Step: Find Your Dream Home in Real Estate"} cta={<></>}/>
 
       <Details>
         <div className="description">
