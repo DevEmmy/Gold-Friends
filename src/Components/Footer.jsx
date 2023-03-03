@@ -1,10 +1,34 @@
 import React from 'react'
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa"
 import { HiLocationMarker, HiPhone } from 'react-icons/hi'
 import styled from 'styled-components'
 import { details } from 'utilities/details'
+import Link from 'next/link'
 
 const Footer = () => {
+
+  const socialMedia = [
+    {
+      title: "Instagram",
+      icon: <FaInstagram />,
+      link: "https://www.instagram.com/goldfriendstravelsandtour/"
+    },
+    {
+      title: "Facebook",
+      icon: <FaFacebook />,
+      link: "https://www.facebook.com/OFFICIALGOLDFRIENDS"
+    },
+    {
+      title: "TikTok",
+      icon: <FaTiktok />,
+      link: "https://www.tiktok.com/@goldfriends23"
+    },
+    {
+      title: "Twitter",
+      icon: <FaTwitter />,
+      link: "https://twitter.com/goldfriends16"
+    }
+  ]
   return (
     <FooterContainer id="footer">
         <div className="left">
@@ -47,17 +71,17 @@ const Footer = () => {
             </div>
             {/* <div>Contact <HiPhone /> : 0907823236, 0902236237</div> */}
             <div className="socials">
-                <div>
-                    <FaInstagram />
-                </div>
-                
-                <div>
-                    <FaFacebook />
-                </div>
-
-                <div>
-                    <FaTwitter />
-                </div>
+                {
+                  socialMedia.map((social, i)=>{
+                    return(
+                      <Link key={i} href={social.link}>
+                        <div>
+                          {social.icon}
+                        </div>
+                      </Link>
+                    )
+                  })
+                }
             </div>
         </div>
     </FooterContainer>
