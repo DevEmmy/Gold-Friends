@@ -60,7 +60,8 @@ const Members = () => {
         },
         {
             image: img8,
-            name: "Fatunke Olufunke"
+            name: "Fatunke Olufunke",
+            number: "08183742696"
         }
     ]
   return (
