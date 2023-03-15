@@ -4,9 +4,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link as Link1, animateScroll as scroll } from "react-scroll";
 
-const Banner = ({bigText, smallText, cta}) => {
+const Banner = ({bigText, smallText, cta, img}) => {
   return (
-    <Container>
+    <Container img={img}>
         <h1>{bigText || "GoldFriends & Companies"}</h1>
         <p>
         {smallText || "Gold Friends is a company that offers a range of services including Real Estate Management, Ticket Booking and Visa Processing."}
@@ -34,8 +34,11 @@ const Banner = ({bigText, smallText, cta}) => {
 }
 
 const Container = styled.div`
-    background-color: #00a190;
-    background-image: linear-gradient(180deg, #00a190 0%, #006c5e 100%);
+    /* background-color: #00a190; */
+    background:linear-gradient(45deg, rgba(0,0,0, 0.7), rgba(0,0,0,0.3)), url(${({img}) => img || "https://img.freepik.com/free-photo/black-woman-with-suitcase-airport_1157-33377.jpg?w=740&t=st=1678861171~exp=1678861771~hmac=77db82029d59992ba000f3f69d26529ff79ee3317e30c8d045c4947786e903e7"});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
     height: 90vh;
     text-align: center;
     display: flex;
@@ -79,6 +82,7 @@ const Container = styled.div`
     @media (max-width: 700px){
         padding: 0 5%;
         line-height: 1.2;
+        height: 60vh;
 
         h1{
             font-size: 40px;

@@ -79,7 +79,7 @@ const Nav = () => {
             {
                 loggedUser ? 
                 <p>Welcome, {loggedUser.firstName}</p>:
-                <Link href={"/sign-up"}>
+                <Link href={"/sign-up"} className="sign">
                 <div className="signup">
                     Sign up
                 </div>
@@ -233,9 +233,18 @@ const Container = styled.div`
         width: fit-content;
         border-radius: 26px;
         padding: 10px 20px;
+        
+
         color: ${lightGreen};
         /* font-weight: 700; */
         cursor: pointer;
+    }
+
+    .sign{
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+        
     }
 
 `

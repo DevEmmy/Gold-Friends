@@ -50,8 +50,8 @@ p{
 }
 
 h2{
-    font-size: 40px;
-    width: 70%;
+    font-size: 30px;
+    width: 90%;
     margin: 0px;
     color: ${deepGreen};
 }
