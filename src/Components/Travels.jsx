@@ -1,34 +1,50 @@
 import { brown, gold, grey } from '@/styles/colors'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Available from './Available'
 import Banner from './Banner'
 import Footer from './Footer'
 import Nav from './Nav'
+import { getAllProperties, getAllVisa } from './services/Services'
 
 const Travels = () => {
-    const availables = [
-        {
-            image: "https://cdn.britannica.com/25/180825-050-B4693350/Wellington-Harbour-New-Zealand.jpg",
-            title: "New Zealand",
-            description: "Embark on an unforgettable adventure in the land of luxury and wonder - New Zealand!",
-        },
-        {
-            image: "https://images.unsplash.com/photo-1546412414-e1885259563a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-            title: "Dubai",
-            description: "Embark on an unforgettable adventure in the land of luxury and wonder - Dubai!"
-        },
-        {
-            image: "https://cdn.britannica.com/47/194547-050-52813FB0/aerial-view-Cairo-Egypt.jpg",
-            title: "Egypt",
-            description: "Embark on an unforgettable adventure in the land of luxury and wonder - Egypt!"
-        },
-        {
-            image: "https://s30876.pcdn.co/wp-content/uploads/South-Africa.jpg.optimal.jpg",
-            title: "South Africa",
-            description: "Embark on an unforgettable adventure in the land of luxury and wonder - South Africa!"
+    // const availables = [
+    //     {
+    //         image: "https://cdn.britannica.com/25/180825-050-B4693350/Wellington-Harbour-New-Zealand.jpg",
+    //         title: "New Zealand",
+    //         description: "Embark on an unforgettable adventure in the land of luxury and wonder - New Zealand!",
+    //     },
+    //     {
+    //         image: "https://images.unsplash.com/photo-1546412414-e1885259563a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    //         title: "Dubai",
+    //         description: "Embark on an unforgettable adventure in the land of luxury and wonder - Dubai!"
+    //     },
+    //     {
+    //         image: "https://cdn.britannica.com/47/194547-050-52813FB0/aerial-view-Cairo-Egypt.jpg",
+    //         title: "Egypt",
+    //         description: "Embark on an unforgettable adventure in the land of luxury and wonder - Egypt!"
+    //     },
+    //     {
+    //         image: "https://s30876.pcdn.co/wp-content/uploads/South-Africa.jpg.optimal.jpg",
+    //         title: "South Africa",
+    //         description: "Embark on an unforgettable adventure in the land of luxury and wonder - South Africa!"
+    //     }
+    // ]
+
+    const [availables, setAvailables] = useState([])
+
+    const getAllAvailables = async ()=>{
+        let result = await getAllVisa()
+        console.log(result)
+        if(result.data){
+            setAvailables(result.data)
         }
-    ]
+    }
+
+    useEffect(()=>{
+        getAllAvailables();
+    }, [])
+
   return (
     <>
         <Nav/>

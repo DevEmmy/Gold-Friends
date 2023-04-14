@@ -8,7 +8,7 @@ const Available = ({data}) => {
     <AvailableContainer>
         <div className="top">
             <img src={data.image} alt="" />
-            <h4>{data.title}</h4>
+            <h4>{data.country}</h4>
         </div>
         <div className="text">
             <p>{data.description}</p>

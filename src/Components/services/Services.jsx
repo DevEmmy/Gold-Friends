@@ -10,7 +10,7 @@ const setConfig = ()=>{
     return 
 }
 
-const signUp = (firstName, lastName, email, password, phoneNumber)=>{
+export const signUp = (firstName, lastName, email, password, phoneNumber)=>{
     axios.post(`${api}/users/sign-up`, {
         email: email,
         password: password,
@@ -35,7 +35,7 @@ const signUp = (firstName, lastName, email, password, phoneNumber)=>{
         console.error(err)})
 }
 
-const signIn = (email, password)=>{
+export const signIn = (email, password)=>{
     axios.post(`${api}/users/sign-in`, {email, password}, setConfig())
     .then(res => {
         if(res.data.token){
@@ -55,19 +55,13 @@ const signIn = (email, password)=>{
         console.error(err)})
 }
 
-const getAllProperties = ()=>{
-    axios.get(`${api}/property/all`)
-    .then(res => console.log(res.data))
-    .catch(err => console.error(err))
-}
-
-const getAProperty = (id)=>{
+export const getAProperty = (id)=>{
     axios.get(`${api}/property/${id}`)
     .then(res => console.log(res.data))
     .catch(err => console.error(err))
 }
 
-const createRequest = (name, email, phoneNumber, message)=>{
+export const createRequest = (name, email, phoneNumber, message)=>{
     axios.post(`${api}/request/`)
     .then(res => {
         console.log(res.data)
@@ -80,4 +74,21 @@ const createRequest = (name, email, phoneNumber, message)=>{
         })
 }
 
-export {signUp, signIn, getAllProperties, getAProperty, createRequest}
+export const getAllProperties = async ()=>{
+    try{
+        let result =await axios.get(`${api}/property/all`)
+        return result;
+    }
+    catch(err) 
+    {return err.message}
+}
+
+export const getAllVisa = async ()=>{
+    try{
+        let result =await axios.get(`${api}/visa/all`)
+        return result
+    }
+    catch(err) 
+    {return err.message}
+}
+
