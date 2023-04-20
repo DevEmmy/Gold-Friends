@@ -42,7 +42,7 @@ const Property = ({property}) => {
         <div className="description">
           <h2>Description</h2>
           <p>
-            {property?.details}
+            {property?.descriptions}
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const Property = ({property}) => {
 
             <div className="images">
                 {
-                property?.images.map((img, i)=>{
+                property?.images?.map((img, i)=>{
                     return(
                         <img src={img} alt="" key={i}/>
                     )
@@ -66,7 +66,7 @@ const Property = ({property}) => {
 
             <div className="images">
                 {
-                property?.videos.map((video, i)=>{
+                property?.videos?.map((video, i)=>{
                     return(
                         <video src={video} controls={true} alt="" key={i}/>
                     )
@@ -77,7 +77,7 @@ const Property = ({property}) => {
         </div>
         <p className="location">
           <HiLocationMarker />
-          Ikorodu, Lagos.
+          {property?.location}
         </p>
 
         <div className="request">

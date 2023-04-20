@@ -55,10 +55,15 @@ export const signIn = (email, password)=>{
         console.error(err)})
 }
 
-export const getAProperty = (id)=>{
-    axios.get(`${api}/property/${id}`)
-    .then(res => console.log(res.data))
-    .catch(err => console.error(err))
+export const getAProperty = async (id)=>{
+    try{
+        let response = await axios.get(`${api}/property/${id}`)
+        return response.data;
+    }
+    catch(err){
+        console.log(err.message);
+    }
+    
 }
 
 export const createRequest = (name, email, phoneNumber, message)=>{

@@ -1,13 +1,27 @@
 import Link from 'next/link'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { FaArrowRight, FaLocationArrow, FaSearchLocation } from 'react-icons/fa'
 import { HiChevronDoubleRight, HiLocationMarker } from 'react-icons/hi'
 import Cards from './Cards'
-import {data} from "./data.js"
+// import {data} from "./data.js"
 import styled from 'styled-components'
 import { brown, deepGreen } from '@/styles/colors'
+import { getAllProperties } from './services/Services'
 
 const Properties = () => {
+  const [data, setData] = useState([])
+
+  const getAllAvailables = async ()=>{
+    let result = await getAllProperties()
+    console.log(result)
+    if(result.data){
+        setData(result.data)
+    }
+}
+
+useEffect(()=>{
+    getAllAvailables();
+}, [])
 
   return (
     <PropertiesContainer>
